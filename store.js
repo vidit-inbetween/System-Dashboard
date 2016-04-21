@@ -33,6 +33,16 @@ var store = {
     return this.sClickedPieChart;
   },
 
+  handleCollapseExpandIconClicked: function (sItemName) {
+    var aData = this.aSystemViewList;
+
+    var oItem = _.find(aData, {label: sItemName});
+    if (oItem) {
+      oItem.isChildVisible = !oItem.isChildVisible;
+    }
+    this.triggerChange();
+  },
+
   handlePieWrapperClicked: function (oPieChartItem) {
     this.sClickedPieChart = oPieChartItem.label;
     this.triggerChange();

@@ -27,16 +27,16 @@ body {
 
 .headerViewContainer{
     overflow: hidden;
-    margin-left: 30%;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 22%;
 }
 
 .headerLabel{
     float: left;
     font-size: 11px;
     color: #aaa;
-    width: 16%;
+    width: 10%;
     overflow: hidden;
     white-space: nowrap;
     text-align: center;
@@ -76,7 +76,7 @@ body {
     border-radius: 50%;
     color: #666;
     font-weight: bold;
-    padding-top: calc(25% - 5px);
+    padding-top: calc(25% - 2px);
     font-size: 12px;
 }
 
@@ -147,7 +147,7 @@ body {
 }
 
 .systemViewContainer {
-    width: calc(45% - 10px);
+    width: calc(60% - 10px);
     margin: 20px 20px 20px 0;
 }
 
@@ -172,17 +172,20 @@ body {
 
 .rightIconContainer {
     float: right;
-    width: 70%;
+    width: 78%;
 }
 
 .rightIconContainerChild {
     display: inline-block;
     height: 30px;
-    width: 16%;
+    width: 10%;
     text-align: center;
     background-size: 16px;
     background-repeat: no-repeat;
     background-position: 50%;
+    float: left;
+    font-size: 12px;
+    color: #777;
 }
 
 .collapseIcon {
@@ -216,7 +219,7 @@ body {
     cursor: context-menu;
     color: #616161;
     font-size: 13px;
-    width: 30%;
+    width: 22%;
     padding-left: 10px;
 }
 
@@ -288,12 +291,18 @@ body {
     padding-left: 20px;
 }
 
+.childDomNodes {
+    height: 60px;
+    transition: all .2s;
+    overflow: hidden;
+}
+
 .dispN {
     display: none;
 }
 
 .hideChildNodes{
-    display: none;
+    height: 0;
 }
 
 .visibilityN{
@@ -301,7 +310,7 @@ body {
 }
 
 .transactionViewContainer {
-    width: calc(55% - 10px);
+    width: calc(40% - 10px);
     margin: 20px 0;
 }
 
@@ -468,4 +477,14 @@ body > .fr-toolbar {
     display: none;
     width: 0;
     height: 0;
+}
+
+.smallTileContainer .customTile:after{
+    font-size: 10px;
+}
+
+.customTile.selectedTile{
+    border: 1px solid #aaa;
+    box-shadow: 0px 0px 9px -2px #aaa;
+    background-image: linear-gradient(100deg, #fff 49%, #fafafa 52%);
 }
