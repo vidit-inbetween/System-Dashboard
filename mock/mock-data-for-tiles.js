@@ -5,7 +5,7 @@ module.exports = [
     label: "Application Health",
     className: "applicationHealth",
     isBig: true,
-    isSelectedTile:false
+    isSelectedTile:true
   },
   {
     id: "10",
