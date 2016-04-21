@@ -17,9 +17,8 @@ var systemItemIndividualView = React.createClass({
     var oChildItems = oItem.childNodes;
     var aChildDom = [];
     _.forEach(oChildItems, function (oChildItem) {
-      var sItemName = oChildItem.label;
       aChildDom.push(
-          <SystemIndividualItemRowView item={sItemName}/>
+          <SystemIndividualItemRowView item={oChildItem}/>
       )
     });
     return aChildDom;
@@ -28,12 +27,11 @@ var systemItemIndividualView = React.createClass({
   render: function () {
 
     var oItem = this.props.item;
-    var sItemName = oItem.label;
     var aChildNodesDom = this.getChildNodeDom();
-    var sChildNodeClassName = (oItem.isChildVisible) ? 'childDomNodes' : 'dispN';
+    var sChildNodeClassName = (oItem.isChildVisible) ? 'childDomNodes' : 'childDomNodes hideChildNodes';
     return (
         <div className='systemItemIndividualViewWrapper'>
-          <SystemIndividualItemRowView item={sItemName}/>
+          <SystemIndividualItemRowView item={oItem}/>
           <div className={sChildNodeClassName}>
             {aChildNodesDom}
           </div>
