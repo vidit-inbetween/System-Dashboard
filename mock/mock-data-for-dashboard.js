@@ -15,10 +15,20 @@ module.exports = [
     isChildVisible: false,
     childNodes: [
       {
-        label: 'node1'
+        id: "2-1",
+        label: 'Node-1',
+        cpu: "23%",
+        memory: "21%",
+        disk: "54%",
+        ping: "Ok"
       },
       {
-        label: 'node2'
+        id: "2-2",
+        label: 'Node-2',
+        cpu: "11%",
+        memory: "21%",
+        disk: "57%",
+        ping: "Ok"
       }
     ],
     transaction: {pass: 20, fail: 60, inProgress: 30},
@@ -33,10 +43,20 @@ module.exports = [
     isChildVisible: false,
     childNodes: [
       {
-        label: 'node1'
+        id: "3-1",
+        label: 'Node-1',
+        cpu: "6%",
+        memory: "54%",
+        disk: "10%",
+        ping: "Ok"
       },
       {
-        label: 'node2'
+        id: "3-2",
+        label: 'Node-2',
+        cpu: "15%",
+        memory: "72%",
+        disk: "31%",
+        ping: "Ok"
       }
     ],
     transaction: {pass: 30, fail: 50, inProgress: 30},
