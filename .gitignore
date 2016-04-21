@@ -11,3 +11,7 @@
 /resources
 *.bak
 /.metadata/
+/node_modules
+/appbuild
+.idea
+/__tests__
