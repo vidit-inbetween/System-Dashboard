@@ -32,7 +32,8 @@ var systemItemIndividualRowView = React.createClass({
   render: function () {
     var oItem = this.props.item;
     var sItemName = oItem.label;
-    var oStyle = (oItem.id!=1 && (!oItem.childNodes || oItem.childNodes.length < 1)) ? {"border-top":"none"}: null;
+    var iId = oItem.id;
+    var oStyle = ((iId!=1 && iId!=7 && iId!=8) && (!oItem.childNodes || oItem.childNodes.length < 1)) ? {"border-top":"none"}: null;
 
     var sPlayClassName = 'playIcon rightIconContainerChild';
     var sRestartClassName = 'restartIcon rightIconContainerChild';
@@ -51,12 +52,12 @@ var systemItemIndividualRowView = React.createClass({
           <div className="labelContainer systemItemIndividualViewChild"
                onClick={this.handleCollapseExpandClick}>{sItemName}</div>
           <div className="rightIconContainer systemItemIndividualViewChild">
-            <div className="statusIcon rightIconContainerChild" title="Status"></div>
-            <div className="thumbUpIcon rightIconContainerChild" title=""></div>
-            <div className={sPlayClassName} title="Play"></div>
-            <div className={sRestartClassName} title="Restart"></div>
-            <div className={sShutDownClassName} title="Shut Down"></div>
-            <div className="exitIcon rightIconContainerChild" title="Exit"></div>
+            <div className="statusIcon rightIconContainerChild" ></div>
+            <div className="thumbUpIcon rightIconContainerChild" ></div>
+            <div className={sPlayClassName}></div>
+            <div className={sRestartClassName}></div>
+            <div className={sShutDownClassName}></div>
+            <div className="exitIcon rightIconContainerChild"></div>
           </div>
 
         </div>
