@@ -1,4 +1,4 @@
-*{
+* {
     font-family: 'Open Sans', Tahoma, sans-serif;;
 }
 
@@ -55,7 +55,7 @@ body {
 
 }
 
-.customTile{
+.customTile {
     margin: 10px;
     width: calc(25% - 20px);
     float: left;
@@ -65,7 +65,7 @@ body {
     position: relative;
 }
 
-.customTile:after{
+.customTile:after {
     position: absolute;
     height: 50%;
     width: 50%;
@@ -80,47 +80,47 @@ body {
     font-size: 12px;
 }
 
-.customBig{
+.customBig {
     width: calc(50% - 20px);
 }
 
-.applicationHealth:after{
+.applicationHealth:after {
     content: 'Application Health';
 }
 
-.misc{
+.misc {
     content: '';
 }
 
-.neo4j:after{
+.neo4j:after {
     content: 'Neo4j';
 }
 
-.elastic:after{
+.elastic:after {
     content: 'Elastic';
 }
 
-.cassandra:after{
+.cassandra:after {
     content: 'Cassandra';
 }
 
-.tomcat:after{
+.tomcat:after {
     content: 'Tomcat';
 }
 
-.pentaho:after{
+.pentaho:after {
     content: 'Pentaho';
 }
 
-.swift:after{
+.swift:after {
     content: 'Swift';
 }
 
-.oracle:after{
+.oracle:after {
     content: 'Oracle';
 }
 
-.dashboardHeader{
+.dashboardHeader {
     height: 60px;
     background-color: #3f3f3f;
 }
@@ -131,7 +131,7 @@ body {
     color: #fafafa;
 }
 
-.dashboardBodyContainer{
+.dashboardBodyContainer {
     padding: 0px 5%;
     height: 100%;
 }
@@ -151,14 +151,14 @@ body {
     margin: 20px 20px 20px 0;
 }
 
-.transactionViewContainer, .systemViewContainer{
+.transactionViewContainer, .systemViewContainer {
     height: calc(100% - 40px);
     float: left;
     background-color: #fff;
     box-shadow: 2px 2px 5px -2px #aaa;
 }
 
-.systemLabel, .transactionLabel{
+.systemLabel, .transactionLabel {
     height: 40px;
     line-height: 40px;
     color: #777;
@@ -187,6 +187,7 @@ body {
 
 .collapseIcon {
     height: 20px;
+    width: 20px;
     background: url("../images/Forward-50.png") no-repeat left 50% top 50%;
     background-size: 15px;
     width:5%;
@@ -194,7 +195,7 @@ body {
 }
 
 .collapseIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -207,11 +208,11 @@ body {
 }
 
 .expandIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
-.labelContainer{
+.labelContainer {
     cursor: context-menu;
     color: #616161;
     font-size: 13px;
@@ -224,7 +225,7 @@ body {
 }
 
 .statusIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -233,7 +234,7 @@ body {
 }
 
 .thumbUpIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -242,7 +243,7 @@ body {
 }
 
 .playIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -251,7 +252,7 @@ body {
 }
 
 .restartIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -260,7 +261,7 @@ body {
 }
 
 .shutDownIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -269,7 +270,7 @@ body {
 }
 
 .exitIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -297,7 +298,7 @@ body {
     overflow: hidden;
 }
 
-.pieWrapper > svg{
+.pieWrapper > svg {
     float: left;
 }
 
@@ -309,34 +310,42 @@ body {
 .applicationhealth {
 }
 
-.pieInfoBodyLabel{
+.pieInfoBodyLabel {
     font-size: 14px;
+    padding: 5px;
 }
 
-.pieInfoInnerWrapper {
-    display: inline-block;
-    float: right;
-    width: 15%;
+.pieChartInfoWrapper {
+    text-align: center;
+    margin-top: 90px;
+    margin-left: 76px;
+    width: 150px;
 }
 
 .pieInfoChild {
     display: inline-block;
-    margin-left: 15px;
+    padding: 3px;
 }
 
 .passColorBlock {
     height: 20px;
     width: 20px;
+    float: left;
+    margin-left: 35px;
 }
 
 .failColorBlock {
     height: 20px;
     width: 20px;
+    float: left;
+    margin-left: 35px;
 }
 
 .inProgressColorBlock {
     height: 20px;
     width: 20px;
+    float: left;
+    margin-left: 35px;
 }
 
 ::-webkit-scrollbar {

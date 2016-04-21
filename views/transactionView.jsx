@@ -62,7 +62,9 @@ var TransactionView = React.createClass({
   },
 
   handlePieWrapperClicked: function (oCurrentItem) {
-    EventBus.dispatch(Events.HANDLE_PIE_WRAPPER_CLICKED, this, oCurrentItem);
+    if (oCurrentItem) {
+      EventBus.dispatch(Events.HANDLE_PIE_WRAPPER_CLICKED, this, oCurrentItem);
+    }
   },
 
   getPieInfoContainerDOM: function () {
@@ -82,28 +84,25 @@ var TransactionView = React.createClass({
     var oInProgressStyle = {'background-color': oMockColor.inProgress};
 
     return (
-        <div className="pieInfoInnerWrapper">
-          <div className="pieInfoBody">
-            <div className="pieInfoBodyLabel">{sClickedPie}</div>
-            <div className="passInfo">
-              <div className="passColorBlock pieInfoChild" style={oPassStyle} title="Pass"></div>
-              <div className="passValue pieInfoChild">{iPass}</div>
-            </div>
-            <div className="inProgressInfo">
-              <div className="inProgressColorBlock pieInfoChild" style={oInProgressStyle} title="InProgress"></div>
-              <div className="inProgressValue pieInfoChild">{iInProgress}</div>
-            </div>
-            <div className="failInfo">
-              <div className="failColorBlock pieInfoChild" style={oFailStyle} title="Fail"></div>
-              <div className="failValue pieInfoChild">{iFail}</div>
-            </div>
+        <div className="pieInfoBody">
+          <div className="pieInfoBodyLabel">{sClickedPie}</div>
+          <div className="passInfo">
+            <div className="passColorBlock pieInfoChild" style={oPassStyle} title="Pass"></div>
+            <div className="passValue pieInfoChild">{iPass}</div>
           </div>
-
+          <div className="inProgressInfo">
+            <div className="inProgressColorBlock pieInfoChild" style={oInProgressStyle} title="InProgress"></div>
+            <div className="inProgressValue pieInfoChild">{iInProgress}</div>
+          </div>
+          <div className="failInfo">
+            <div className="failColorBlock pieInfoChild" style={oFailStyle} title="Fail"></div>
+            <div className="failValue pieInfoChild">{iFail}</div>
+          </div>
         </div>
     );
   },
 
-  getPieChartView: function(oData){
+  getPieChartView: function (oData) {
 
     var oTransactionData = oData.transaction;
     var iPass = oTransactionData.pass;
@@ -130,13 +129,13 @@ var TransactionView = React.createClass({
     var sPieContainerClassName = sItemName.replace(' ', '').toLowerCase() + "Pie pieWrapper";
 
     return (
-        <div className={sPieContainerClassName} onClick={this.handlePieWrapperClicked.bind(this, oData)}>
+        <div className={sPieContainerClassName}>
           <Pie slices={aSlice}/>
         </div>
     );
   },
 
-  getTileViews: function(){
+  getTileViews: function () {
 
     var aTiles = MockDataForTiles;
     var aData = this.props.data;
@@ -144,16 +143,26 @@ var TransactionView = React.createClass({
     var aBigTileViews = [];
     var aSmallTileViews = [];
 
-    _.forEach(aTiles, function(oTile){
+    _.forEach(aTiles, function (oTile) {
       var oData = _.find(aData, {id: oTile.systemId});
-      var oPieChartView = oData ? <div className="pieChartWrapper">{_this.getPieChartView(oData)}</div> : null;
+      var oPieChartView = {};
+      if (oData) {
+        oPieChartView = (
+            <div className="pieChartWrapper" onClick={_this.handlePieWrapperClicked.bind(this, oData)}>
+              {_this.getPieChartView(oData)}
+            </div>);
+      } else {
+        oPieChartView = <div className="pieChartInfoWrapper">{_this.getPieInfoContainerDOM()}</div>;
+      }
+
+
       var sTileClassName = oTile.isBig ? "customTile customBig " : "customTile ";
       sTileClassName += oTile.className;
 
       if(oTile.isBig){
-        aBigTileViews.push(<div key={oTile.id} className={sTileClassName}>{oPieChartView}</div>);
+        aBigTileViews.push(<div key={oTile.id} className={sTileClassName} onClick={_this.handlePieWrapperClicked.bind(this, oData)>{oPieChartView}</div>);
        } else {
-        aSmallTileViews.push(<div key={oTile.id} className={sTileClassName}>{oPieChartView}</div>);
+        aSmallTileViews.push(<div key={oTile.id} className={sTileClassName} onClick={_this.handlePieWrapperClicked.bind(this, oData)>{oPieChartView}</div>);
       }
     });
 
