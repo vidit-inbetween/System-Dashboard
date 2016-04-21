@@ -1,6 +1,7 @@
 var React = require('react');
 var EventBus = require('../libraries/eventdispatcher/EventDispatcher');
 var _ = require('lodash');
+var $ = require('jquery');
 
 
 var Events = {
@@ -15,18 +16,12 @@ var systemItemIndividualRowView = React.createClass({
   },
 
   handleCollapseExpandClick: function (oEvent) {
-    var oCollapseIconDom = this.refs.collapseExpandIconRef;
-    var aClassList = oCollapseIconDom.classList;
-    if (_.includes(aClassList, 'collapseIcon')) {
-      oCollapseIconDom.classList.remove('collapseIcon');
-      oCollapseIconDom.classList.add('expandIcon');
-    } else if (_.includes(aClassList, 'expandIcon')) {
-      oCollapseIconDom.classList.remove('expandIcon');
-      oCollapseIconDom.classList.add('collapseIcon');
+
+    var oIndividualWrapperViewDOM = this.refs.systemItemIndividualView;
+    if(oIndividualWrapperViewDOM.nextSibling && _.includes(oIndividualWrapperViewDOM.nextSibling.classList, 'childDomNodes')){
+      var oDomToToggle = oIndividualWrapperViewDOM.nextSibling;
+      $(oDomToToggle).toggle(500, 'linear');
     }
-    var oItem = this.props.item;
-    var sItemName = oItem.label;
-    EventBus.dispatch(Events.HANDLE_COLLAPSE_EXPAND_ICON_CLICKED, this, sItemName);
   },
 
   render: function () {
@@ -45,7 +40,7 @@ var systemItemIndividualRowView = React.createClass({
     }
 
     return (
-        <div className='systemItemIndividualView' style={oStyle}>
+        <div className='systemItemIndividualView'  ref='systemItemIndividualView' style={oStyle}>
           <div className="collapseExpand collapseIcon systemItemIndividualViewChild"
                ref="collapseExpandIconRef"
                onClick={this.handleCollapseExpandClick}></div>
