@@ -32,7 +32,7 @@ var systemItemIndividualView = React.createClass({
     var aChildNodesDom = this.getChildNodeDom();
     var sChildNodeClassName = (oItem.isChildVisible) ? 'childDomNodes' : 'dispN';
     return (
-        <div className='systemItemIndividualView'>
+        <div className='systemItemIndividualViewWrapper'>
           <SystemIndividualItemRowView item={sItemName}/>
           <div className={sChildNodeClassName}>
             {aChildNodesDom}
