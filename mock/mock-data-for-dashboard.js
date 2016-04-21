@@ -48,7 +48,7 @@ module.exports = [
     childNodes: [
       {label: 'node1', status: 'InProgress'},
       {label: 'node2', status: 'Pass'}],
-    transaction: {pass: 40, fail: 40, inProgress: 30}
+    transaction: {pass: 40, fail: 40, inProgress: 30},
     cpu: "13%",
     memory: "42%",
     disk: "59%",
@@ -63,7 +63,7 @@ module.exports = [
       {label: 'node1', status: 'Pass'},
       {label: 'node2', status: 'Pass'}
     ],
-    transaction: {pass: 50, fail: 30, inProgress: 30}
+    transaction: {pass: 50, fail: 30, inProgress: 30},
     cpu: "12%",
     memory: "25%",
     disk: "10%",
@@ -78,7 +78,7 @@ module.exports = [
       {label: 'node1', status: 'Pass'},
       {label: 'node2', status: 'InProgress'}
     ],
-    transaction: {pass: 60, fail: 20, inProgress: 30}
+    transaction: {pass: 60, fail: 20, inProgress: 30},
     cpu: "1%",
     memory: "11%",
     disk: "21%",
@@ -108,5 +108,4 @@ module.exports = [
     disk: "10%",
     ping: "Ok"
   }
-]
-;
+];

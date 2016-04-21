@@ -159,6 +159,10 @@ var TransactionView = React.createClass({
       var sTileClassName = oTile.isBig ? "customTile customBig " : "customTile ";
       sTileClassName += oTile.className;
 
+      if(oTile.isSelectedTile){
+        sTileClassName += ' selectedTile';
+      }
+
       if(oTile.isBig){
         aBigTileViews.push(<div key={oTile.id} className={sTileClassName} onClick={_this.handlePieWrapperClicked.bind(_this, oData)}>{oPieChartView}</div>);
        } else {

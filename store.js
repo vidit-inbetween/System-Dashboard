@@ -7,6 +7,7 @@ var MicroEvent = require("./libraries/microEvent/MicroEvent");
 var _ = require('lodash');
 
 var MockDataForDashboard = require('./mock/mock-data-for-dashboard');
+var MockDataForTiles = require('./mock/mock-data-for-tiles');
 
 var store = {
 
@@ -45,8 +46,15 @@ var store = {
 
   handlePieWrapperClicked: function (oPieChartItem) {
     this.sClickedPieChart = oPieChartItem.label;
+    var iIdSelected = oPieChartItem.id;
+    _.forEach(MockDataForTiles, function (oTileItem) {
+      oTileItem.isSelectedTile = (oTileItem.id == iIdSelected);
+    });
+
     this.triggerChange();
   }
+
+
 
 };
 
