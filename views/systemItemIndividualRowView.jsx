@@ -45,13 +45,13 @@ var systemItemIndividualRowView = React.createClass({
     var sStatusTitle = '';
     var sStatus = oItem.status;
     if(sStatus == 'InProgress'){
+      sStatusTitle = 'Warning';
       sBackgroundColor = MockColorData.pieChartColor.inProgress;
-      sStatusTitle = 'In Progress';
     }else if(sStatus == 'Pass'){
-      sStatusTitle = 'Pass';
+      sStatusTitle = 'Ok';
       sBackgroundColor = MockColorData.pieChartColor.pass;
     }else if(sStatus == 'Fail'){
-      sStatusTitle = 'Fail';
+      sStatusTitle = 'Down';
       sBackgroundColor = MockColorData.pieChartColor.fail;
     }
 

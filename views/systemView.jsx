@@ -5,6 +5,7 @@ var _ = require('lodash');
 var SystemItemIndividualView = require('./systemItemIndividualView.jsx').view;
 var MockDataForLeftTableHeader = require('../mock/mock-data-for-left-table-header');
 var MockDataForDashBoard = require('../mock/mock-data-for-dashboard');
+var MockColorData = require('../mock/mock');
 
 var Events = {
 };
@@ -53,12 +54,30 @@ var SystemView = React.createClass({
     var sDisk = oApplicationHealthData.disk;
     var sPing = oApplicationHealthData.ping;
 
+    var sPlayClassName = 'playIcon rightIconContainerChild';
+    var sRestartClassName = 'restartIcon rightIconContainerChild';
+    var sShutDownClassName = 'shutDownIcon rightIconContainerChild';
+
+    var sBackgroundColor = MockColorData.pieChartColor.pass;
+    var oStatusStyle = {
+      'background-color': sBackgroundColor
+    };
+
+    var oHeaderView = this.getHeaderView();
+
     return <div className="applicationHealthViewContainer">
-      <div className="appHealthHeader">Application Health</div>
-      <div className="appHealthBody">
-        <div className="appHealthEl pass">{sPass + " passed!"}</div>
-        <div className="appHealthEl fail">{sFail + " failed!"}</div>
-        <div className="appHealthEl inPrg">{sInPrg + " in-progress!"}</div>
+      <div className="appHealthHeader">
+        <div className="appHealthHeaderText">Application Health</div>
+        <div className="appHealthHeaderBody">
+          <div className="statusIcon rightIconContainerChild"  >
+            <div className="statusIconInner" style={oStatusStyle}>Ok</div>
+          </div>
+          <div className="thumbUpIcon rightIconContainerChild"></div>
+          <div className={sPlayClassName}></div>
+          <div className={sRestartClassName}></div>
+          <div className={sShutDownClassName}></div>
+          <div className="exitIcon rightIconContainerChild"></div>
+        </div>
       </div>
     </div>
 

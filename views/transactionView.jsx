@@ -79,17 +79,16 @@ var TransactionView = React.createClass({
     var iInProgress = oTransaction.inProgress;
 
     var oMockColor = oMock.pieChartColor;
-    var oPassStyle = {'background-color': oMockColor.pass};
-    var oFailStyle = {'background-color': oMockColor.fail};
-    var oInProgressStyle = {'background-color': oMockColor.inProgress};
+    // var oPassStyle = {'background-color': oMockColor.pass};
+    // var oFailStyle = {'background-color': oMockColor.fail};
+    // var oInProgressStyle = {'background-color': oMockColor.inProgress};
 
     return (
         <div className="pieInfoBody">
           <div className="pieInfoBodyLabel">{sClickedPie}</div>
           <div className="passInfo">
             <div className="infoLeftContainer">
-              <div className="passColorBlock pieInfoChild" style={oPassStyle} title="Pass"></div>
-              <div className="passLabel infoLabel">Pass</div>
+              <div className="passLabel infoLabel">Passed</div>
             </div>
             <div className="infoRightContainer">
               <div className="passValue pieInfoChild">{iPass}</div>
@@ -97,7 +96,6 @@ var TransactionView = React.createClass({
           </div>
           <div className="inProgressInfo">
             <div className="infoLeftContainer">
-              <div className="inProgressColorBlock pieInfoChild" style={oInProgressStyle} title="InProgress"></div>
               <div className="inProgressLabel infoLabel">In Progress</div>
             </div>
             <div className="infoRightContainer">
@@ -106,8 +104,7 @@ var TransactionView = React.createClass({
           </div>
           <div className="failInfo">
             <div className="infoLeftContainer">
-              <div className="failColorBlock pieInfoChild" style={oFailStyle} title="Fail"></div>
-              <div className="inProgressLabel infoLabel">Fail</div>
+              <div className="inProgressLabel infoLabel">Failed</div>
             </div>
             <div className="infoRightContainer">
               <div className="failValue pieInfoChild">{iFail}</div>

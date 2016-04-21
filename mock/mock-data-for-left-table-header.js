@@ -17,7 +17,7 @@ module.exports = [
   },
   {
     id: "shutdown",
-    label: "Shutdown"
+    label: "Stop"
   },
   {
     id: "takeOffline",

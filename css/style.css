@@ -37,7 +37,6 @@ body {
     font-size: 11px;
     color: #aaa;
     width: 10%;
-    overflow: hidden;
     white-space: nowrap;
     text-align: center;
     text-overflow: ellipsis;
@@ -338,15 +337,15 @@ body {
 }
 
 .pieInfoBodyLabel {
-    font-size: 14px;
-    padding-bottom: 5px;
+    font-size: 13px;
+    padding-bottom: 15px;
+    font-weight: 600;
+    color: #777;
 }
 
 .pieChartInfoWrapper {
     text-align: center;
     overflow: hidden;
-    border: 1px solid #eee;
-    margin: 20px;
     border-radius: 4px;
 }
 
@@ -498,22 +497,21 @@ body > .fr-toolbar {
     float: left;
     display: inline-flex;
     overflow: hidden;
-    border: 1px solid #eee;
 }
 
 .infoLabel{
     padding-left: 10%;
     padding-right: 10%;
-    width: 50px;
+    width: 140px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: small;
+    text-align: left;
 }
 
 .infoRightContainer{
     overflow: hidden;
-    border: 1px solid #eee;
 }
 
 .applicationHealthViewContainer{
@@ -545,9 +543,9 @@ body > .fr-toolbar {
 .appHealthHeader {
     font-size: 13px;
     font-weight: 600;
-    margin: 10px;
-    text-align: center;
+    text-align: left;
     color: #777;
+    overflow: hidden;
 }
 
 .appHealthBody {
@@ -557,4 +555,26 @@ body > .fr-toolbar {
 .customTile:hover {
     box-shadow: 0px 0px 9px -2px #aaa;
     border-color: #ccc;
+}
+
+.passInfo {
+    border-bottom: 1px solid #eee;
+}
+
+.inProgressInfo {
+    border-bottom: 1px solid #eee;
+}
+
+.failInfo {
+    /*border-bottom: 1px solid #eee;*/
+}
+
+.appHealthHeaderText{
+    float: left;
+    padding: 5px 10px 0 10px;
+    width: 22%;
+}
+
+.appHealthHeaderBody{
+    width: 78%;
 }
