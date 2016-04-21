@@ -221,12 +221,22 @@ body {
 }
 
 .statusIcon {
-    background-image: url("../images/Rectangle-50.png");
+    /*background-image: url("../images/Rectangle-50.png");*/
 }
 
-.statusIcon:hover {
-    background-color: #D6D3D3;
-    cursor: pointer;
+.statusIconInner{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.statusIconInner:hover {
+    /*background-color: #D6D3D3;*/
+    cursor: context-menu;
 }
 
 .thumbUpIcon {
@@ -274,7 +284,8 @@ body {
     cursor: pointer;
 }
 
-.childDomNodes {
+.childDomNodes .systemItemIndividualView .labelContainer {
+    padding-left: 20px;
 }
 
 .dispN {

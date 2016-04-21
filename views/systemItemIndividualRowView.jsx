@@ -3,6 +3,7 @@ var EventBus = require('../libraries/eventdispatcher/EventDispatcher');
 var _ = require('lodash');
 var $ = require('jquery');
 
+var MockColorData = require('../mock/mock');
 
 var Events = {
   HANDLE_COLLAPSE_EXPAND_ICON_CLICKED: "handle_collapse_expand_icon_clicked"
@@ -39,6 +40,24 @@ var systemItemIndividualRowView = React.createClass({
       sShutDownClassName += ' visibilityN';
     }
 
+    var sBackgroundColor = '';
+    var sStatusTitle = '';
+    var sStatus = oItem.status;
+    if(sStatus == 'InProgress'){
+      sBackgroundColor = MockColorData.pieChartColor.inProgress;
+      sStatusTitle = 'In Progress';
+    }else if(sStatus == 'Pass'){
+      sStatusTitle = 'Pass';
+      sBackgroundColor = MockColorData.pieChartColor.pass;
+    }else if(sStatus == 'Fail'){
+      sStatusTitle = 'Fail';
+      sBackgroundColor = MockColorData.pieChartColor.fail;
+    }
+
+    var oStatusStyle = {
+      'background-color': sBackgroundColor
+    };
+
     return (
         <div className='systemItemIndividualView'  ref='systemItemIndividualView' style={oStyle}>
           <div className="collapseExpand collapseIcon systemItemIndividualViewChild"
@@ -47,7 +66,9 @@ var systemItemIndividualRowView = React.createClass({
           <div className="labelContainer systemItemIndividualViewChild"
                onClick={this.handleCollapseExpandClick}>{sItemName}</div>
           <div className="rightIconContainer systemItemIndividualViewChild">
-            <div className="statusIcon rightIconContainerChild" ></div>
+            <div className="statusIcon rightIconContainerChild"  >
+              <div className="statusIconInner" style={oStatusStyle}>{sStatusTitle}</div>
+            </div>
             <div className="thumbUpIcon rightIconContainerChild" ></div>
             <div className={sPlayClassName}></div>
             <div className={sRestartClassName}></div>
