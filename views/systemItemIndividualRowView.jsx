@@ -16,10 +16,12 @@ var systemItemIndividualRowView = React.createClass({
     item: React.PropTypes.object
   },
 
-  handleCollapseExpandClick: function (oEvent) {
+  handleCollapseExpandClick: function (iId, oEvent) {
     var oItem = this.props.item;
     var sItemName = oItem.label;
-    EventBus.dispatch(Events.HANDLE_COLLAPSE_EXPAND_ICON_CLICKED, this, sItemName);
+    if(iId!=1 && iId!=4 && iId!=5 && iId!=6 && iId!=7 && iId!=8) {
+      EventBus.dispatch(Events.HANDLE_COLLAPSE_EXPAND_ICON_CLICKED, this, sItemName);
+    }
   },
 
   render: function () {
@@ -30,7 +32,7 @@ var systemItemIndividualRowView = React.createClass({
     var sMemory = oItem.memory;
     var sDisk = oItem.disk;
     var sPing = oItem.ping;
-    var oStyle = ((iId!=1 && iId!=7 && iId!=8) && (!oItem.childNodes || oItem.childNodes.length < 1)) ? {"border-top":"none"}: null;
+    var oStyle = ((iId!=1 && iId!=4 && iId!=5 && iId!=6 && iId!=7 && iId!=8) && (!oItem.childNodes || oItem.childNodes.length < 1)) ? {"border-top":"none"} : null;
 
     var sPlayClassName = 'playIcon rightIconContainerChild';
     var sRestartClassName = 'restartIcon rightIconContainerChild';
@@ -62,7 +64,7 @@ var systemItemIndividualRowView = React.createClass({
     return (
         <div className='systemItemIndividualView'  ref='systemItemIndividualView' style={oStyle}>
           <div className="labelContainer systemItemIndividualViewChild"
-               onClick={this.handleCollapseExpandClick}>{sItemName}</div>
+               onClick={this.handleCollapseExpandClick.bind(this, iId)}>{sItemName}</div>
           <div className="rightIconContainer systemItemIndividualViewChild">
             <div className="statusIcon rightIconContainerChild"  >
               <div className="statusIconInner" style={oStatusStyle}>{sStatusTitle}</div>

@@ -62,8 +62,7 @@ module.exports = [
         cpu: "15%",
         memory: "72%",
         disk: "31%",
-        ping: "Ok",
-        status: 'Fail'
+        ping: "Ok"
       }
     ],
     transaction: {pass: 30, fail: 50, inProgress: 30},
@@ -77,9 +76,7 @@ module.exports = [
     label: 'Cassandra',
     status: 'Pass',
     isChildVisible: false,
-    childNodes: [
-      {label: 'node1', status: 'InProgress'},
-      {label: 'node2', status: 'Pass'}],
+    childNodes: [],
     transaction: {pass: 40, fail: 40, inProgress: 30},
     cpu: "13%",
     memory: "42%",
@@ -91,10 +88,7 @@ module.exports = [
     label: 'Tomcat',
     status: 'Pass',
     isChildVisible: false,
-    childNodes: [
-      {label: 'node1', status: 'Pass'},
-      {label: 'node2', status: 'Pass'}
-    ],
+    childNodes: [],
     transaction: {pass: 50, fail: 30, inProgress: 30},
     cpu: "12%",
     memory: "25%",
@@ -106,10 +100,7 @@ module.exports = [
     label: 'Pentaho',
     status: 'Pass',
     isChildVisible: false,
-    childNodes: [
-      {label: 'node1', status: 'Pass'},
-      {label: 'node2', status: 'InProgress'}
-    ],
+    childNodes: [],
     transaction: {pass: 60, fail: 20, inProgress: 30},
     cpu: "1%",
     memory: "11%",
