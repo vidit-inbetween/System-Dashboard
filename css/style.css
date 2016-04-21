@@ -275,12 +275,18 @@ body {
 }
 
 .childDomNodes {
-    margin-left: 20px;
-    position: relative;
 }
 
 .dispN {
     display: none;
+}
+
+.hideChildNodes{
+    display: none;
+}
+
+.visibilityN{
+    visibility: hidden;
 }
 
 .transactionViewContainer {
