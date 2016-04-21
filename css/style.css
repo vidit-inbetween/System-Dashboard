@@ -16,46 +16,67 @@ body {
 }
 
 .customTile{
+    margin: 10px;
+    width: calc(25% - 20px);
+    float: left;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    position: relative;
+}
 
+.customTile:after{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background: #fff;
+    text-align: center;
+    top: 25%;
+    left: 25%;
+    border-radius: 50%;
+    color: #666;
+    font-weight: bold;
+    padding-top: calc(25% - 5px);
 }
 
 .customBig{
-
+    width: calc(50% - 20px);
 }
 
-.applicationHealth{
+.applicationHealth:after{
     content: 'Application Health';
 }
 
 .misc{
     content: '';
+    height: 334px;
 }
 
-.neo4j{
+.neo4j:after{
     content: 'Neo4j';
 }
 
-.elastic{
+.elastic:after{
     content: 'Elastic';
 }
 
-.cassandra{
+.cassandra:after{
     content: 'Cassandra';
 }
 
-.tomcat{
+.tomcat:after{
     content: 'Tomcat';
 }
 
-.pentaho{
+.pentaho:after{
     content: 'Pentaho';
 }
 
-.swift{
+.swift:after{
     content: 'Swift';
 }
 
-.oracle{
+.oracle:after{
     content: 'Oracle';
 }
 
@@ -235,12 +256,16 @@ body {
 
 .transactionView {
     padding: 10px;
+    overflow: auto;
+    height: calc(100% - 50px);
 }
 
 .pieWrapper {
-    width: 13%;
-    display: inline-block;
-    padding: 3px;
+    overflow: hidden;
+}
+
+.pieWrapper > svg{
+    float: left;
 }
 
 .pieChartLabel {
@@ -249,9 +274,6 @@ body {
 }
 
 .applicationhealth {
-    width: 30%;
-    display: inline-block;
-    margin-left: 10%;
 }
 
 .pieInfoBodyLabel{

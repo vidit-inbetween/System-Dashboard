@@ -49,7 +49,7 @@ var TransactionView = React.createClass({
       ];
 
       var sItemName = oCurrentItem.Name;
-      var sPieContainerClassName = sItemName.replace(' ', '').toLowerCase() + " pieWrapper";
+      var sPieContainerClassName = sItemName.replace(' ', '').toLowerCase() + "Pie pieWrapper";
       aPieDOM.push(
           <div className={sPieContainerClassName} onClick={that.handlePieWrapperClicked.bind(that, oCurrentItem)}>
             <Pie slices={aSlice}/>
@@ -127,12 +127,11 @@ var TransactionView = React.createClass({
     ];
 
     var sItemName = oData.label;
-    var sPieContainerClassName = sItemName.replace(' ', '').toLowerCase() + " pieWrapper";
+    var sPieContainerClassName = sItemName.replace(' ', '').toLowerCase() + "Pie pieWrapper";
 
     return (
         <div className={sPieContainerClassName} onClick={this.handlePieWrapperClicked.bind(this, oData)}>
           <Pie slices={aSlice}/>
-          <div className="pieChartLabel">{sItemName}</div>
         </div>
     );
   },
@@ -152,6 +151,8 @@ var TransactionView = React.createClass({
 
       aTileViews.push(<div key={oTile.id} className={sTileClassName}>{oPieChartView}</div>);
     });
+
+    return aTileViews;
   },
 
   render: function () {
