@@ -228,13 +228,14 @@ body {
 }
 
 .statusIconInner{
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 1%;
-
+    margin: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 4px;
 }
 
 .statusIconInner:hover {
@@ -520,8 +521,14 @@ body > .fr-toolbar {
     font-weight: 600;
     margin: 10px;
     text-align: center;
+    color: #777;
 }
 
 .appHealthBody {
     text-align: center;
+}
+
+.customTile:hover {
+    box-shadow: 0px 0px 9px -2px #aaa;
+    border-color: #ccc;
 }
