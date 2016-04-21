@@ -160,9 +160,9 @@ var TransactionView = React.createClass({
       sTileClassName += oTile.className;
 
       if(oTile.isBig){
-        aBigTileViews.push(<div key={oTile.id} className={sTileClassName} onClick={_this.handlePieWrapperClicked.bind(this, oData)>{oPieChartView}</div>);
+        aBigTileViews.push(<div key={oTile.id} className={sTileClassName} onClick={_this.handlePieWrapperClicked.bind(this, oData)}>{oPieChartView}</div>);
        } else {
-        aSmallTileViews.push(<div key={oTile.id} className={sTileClassName} onClick={_this.handlePieWrapperClicked.bind(this, oData)>{oPieChartView}</div>);
+        aSmallTileViews.push(<div key={oTile.id} className={sTileClassName} onClick={_this.handlePieWrapperClicked.bind(this, oData)}>{oPieChartView}</div>);
       }
     });
 
