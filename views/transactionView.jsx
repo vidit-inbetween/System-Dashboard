@@ -69,7 +69,7 @@ var TransactionView = React.createClass({
     var aData = this.props.data;
     var sClickedPie = this.props.clickedPieChart;
 
-    var oCurrentPie = _.find(aData, {Name: sClickedPie});
+    var oCurrentPie = _.find(aData, {label: sClickedPie});
 
     var oTransaction = oCurrentPie.transaction;
     var iPass = oTransaction.pass;
@@ -82,7 +82,6 @@ var TransactionView = React.createClass({
     var oInProgressStyle = {'background-color': oMockColor.inProgress};
 
     return (
-        <div className="pieInfoInnerWrapper">
           <div className="pieInfoBody">
             <div className="pieInfoBodyLabel">{sClickedPie}</div>
             <div className="passInfo">
@@ -98,8 +97,6 @@ var TransactionView = React.createClass({
               <div className="failValue pieInfoChild">{iFail}</div>
             </div>
           </div>
-
-        </div>
     );
   },
 
@@ -145,7 +142,9 @@ var TransactionView = React.createClass({
 
     _.forEach(aTiles, function(oTile){
       var oData = _.find(aData, {id: oTile.systemId});
-      var oPieChartView = oData ? <div className="pieChartWrapper">{_this.getPieChartView(oData)}</div> : null;
+      var oPieChartView = oData ?
+          <div className="pieChartWrapper">{_this.getPieChartView(oData)}</div> :
+          <div className="pieChartInfoWrapper">{_this.getPieInfoContainerDOM()}</div>;
       var sTileClassName = oTile.isBig ? "customTile customBig " : "customTile ";
       sTileClassName += oTile.className;
 

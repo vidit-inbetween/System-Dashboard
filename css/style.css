@@ -282,10 +282,8 @@ body {
     font-size: 14px;
 }
 
-.pieInfoInnerWrapper {
-    display: inline-block;
-    float: right;
-    width: 15%;
+.pieChartInfoWrapper {
+    text-align: center;
 }
 
 .pieInfoChild {
