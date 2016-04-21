@@ -22,5 +22,21 @@ module.exports = [
   {
     id: "takeOffline",
     label: "Take Offline"
+  },
+  {
+    id: "cpu",
+    label: "CPU"
+  },
+  {
+    id: "memory",
+    label: "Memory"
+  },
+  {
+    id: "disk",
+    label: "Disk"
+  },
+  {
+    id: "ping",
+    label: "Ping"
   }
 ];
