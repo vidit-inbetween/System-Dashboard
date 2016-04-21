@@ -22,15 +22,6 @@ var ApplicationController = React.createClass({
     });
   },
 
-  /*getInitialState: function(){
-   //return this.props.data;
-   return (
-   {
-   data: []
-   }
-   );
-   },*/
-
   getStore: function () {
     return this.props.store;
   },

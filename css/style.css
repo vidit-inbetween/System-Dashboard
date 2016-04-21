@@ -132,8 +132,7 @@ body {
 
 .rightIconContainer {
     float: right;
-    width: 25%;
-
+    margin-right: 10px;
 }
 
 .rightIconContainerChild {
@@ -142,13 +141,14 @@ body {
 
 .collapseIcon {
     height: 20px;
+    width: 20px;
     background: url("../images/Forward-50.png") no-repeat left 50% top 50%;
     background-size: 15px;
-    width:5%;
+    margin-left: 8px;
 }
 
 .collapseIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -157,15 +157,17 @@ body {
     width: 20px;
     background: url("../images/Expand Arrow-50.png") no-repeat left 50% top 50%;
     background-size: 15px;
+    margin-left: 8px;
 }
 
 .expandIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
 .labelContainer{
     cursor: context-menu;
+    vertical-align: super;
 }
 
 .statusIcon {
@@ -176,7 +178,7 @@ body {
 }
 
 .statusIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -188,7 +190,7 @@ body {
 }
 
 .thumbUpIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -200,7 +202,7 @@ body {
 }
 
 .playIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -212,19 +214,19 @@ body {
 }
 
 .restartIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
 .shutDownIcon {
     height: 20px;
     width: 20px;
-    background: url("../images/Shutdown-30 (1).png") no-repeat left 50% top 50%;
+    background: url("../images/Shutdown-30.png") no-repeat left 50% top 50%;
     background-size: 15px;
 }
 
 .shutDownIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
@@ -236,7 +238,7 @@ body {
 }
 
 .exitIcon:hover {
-    background-color: #606060;
+    background-color: #D6D3D3;
     cursor: pointer;
 }
 
