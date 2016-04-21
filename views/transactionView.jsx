@@ -87,16 +87,31 @@ var TransactionView = React.createClass({
         <div className="pieInfoBody">
           <div className="pieInfoBodyLabel">{sClickedPie}</div>
           <div className="passInfo">
-            <div className="passColorBlock pieInfoChild" style={oPassStyle} title="Pass"></div>
-            <div className="passValue pieInfoChild">{iPass}</div>
+            <div className="infoLeftContainer">
+              <div className="passColorBlock pieInfoChild" style={oPassStyle} title="Pass"></div>
+              <div className="passLabel infoLabel">Pass</div>
+            </div>
+            <div className="infoRightContainer">
+              <div className="passValue pieInfoChild">{iPass}</div>
+            </div>
           </div>
           <div className="inProgressInfo">
-            <div className="inProgressColorBlock pieInfoChild" style={oInProgressStyle} title="InProgress"></div>
-            <div className="inProgressValue pieInfoChild">{iInProgress}</div>
+            <div className="infoLeftContainer">
+              <div className="inProgressColorBlock pieInfoChild" style={oInProgressStyle} title="InProgress"></div>
+              <div className="inProgressLabel infoLabel">In Progress</div>
+            </div>
+            <div className="infoRightContainer">
+              <div className="inProgressValue pieInfoChild">{iInProgress}</div>
+            </div>
           </div>
           <div className="failInfo">
-            <div className="failColorBlock pieInfoChild" style={oFailStyle} title="Fail"></div>
-            <div className="failValue pieInfoChild">{iFail}</div>
+            <div className="infoLeftContainer">
+              <div className="failColorBlock pieInfoChild" style={oFailStyle} title="Fail"></div>
+              <div className="inProgressLabel infoLabel">Fail</div>
+            </div>
+            <div className="infoRightContainer">
+              <div className="failValue pieInfoChild">{iFail}</div>
+            </div>
           </div>
         </div>
     );
@@ -159,14 +174,16 @@ var TransactionView = React.createClass({
       var sTileClassName = oTile.isBig ? "customTile customBig " : "customTile ";
       sTileClassName += oTile.className;
 
-      if(oTile.isSelectedTile){
+      if (oTile.isSelectedTile) {
         sTileClassName += ' selectedTile';
       }
 
-      if(oTile.isBig){
-        aBigTileViews.push(<div key={oTile.id} className={sTileClassName} onClick={_this.handlePieWrapperClicked.bind(_this, oData)}>{oPieChartView}</div>);
-       } else {
-        aSmallTileViews.push(<div key={oTile.id} className={sTileClassName} onClick={_this.handlePieWrapperClicked.bind(_this, oData)}>{oPieChartView}</div>);
+      if (oTile.isBig) {
+        aBigTileViews.push(<div key={oTile.id} className={sTileClassName}
+                                onClick={_this.handlePieWrapperClicked.bind(_this, oData)}>{oPieChartView}</div>);
+      } else {
+        aSmallTileViews.push(<div key={oTile.id} className={sTileClassName}
+                                  onClick={_this.handlePieWrapperClicked.bind(_this, oData)}>{oPieChartView}</div>);
       }
     });
 
