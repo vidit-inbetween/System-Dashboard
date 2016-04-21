@@ -16,18 +16,19 @@ var systemItemIndividualRowView = React.createClass({
   },
 
   handleCollapseExpandClick: function (oEvent) {
-
-    var oIndividualWrapperViewDOM = this.refs.systemItemIndividualView;
-    if(oIndividualWrapperViewDOM.nextSibling && _.includes(oIndividualWrapperViewDOM.nextSibling.classList, 'childDomNodes')){
-      var oDomToToggle = oIndividualWrapperViewDOM.nextSibling;
-      $(oDomToToggle).toggle(500, 'linear');
-    }
+    var oItem = this.props.item;
+    var sItemName = oItem.label;
+    EventBus.dispatch(Events.HANDLE_COLLAPSE_EXPAND_ICON_CLICKED, this, sItemName);
   },
 
   render: function () {
     var oItem = this.props.item;
     var sItemName = oItem.label;
     var iId = oItem.id;
+    var sCPU = oItem.cpu;
+    var sMemory = oItem.memory;
+    var sDisk = oItem.disk;
+    var sPing = oItem.ping;
     var oStyle = ((iId!=1 && iId!=7 && iId!=8) && (!oItem.childNodes || oItem.childNodes.length < 1)) ? {"border-top":"none"}: null;
 
     var sPlayClassName = 'playIcon rightIconContainerChild';
@@ -41,9 +42,6 @@ var systemItemIndividualRowView = React.createClass({
 
     return (
         <div className='systemItemIndividualView'  ref='systemItemIndividualView' style={oStyle}>
-          <div className="collapseExpand collapseIcon systemItemIndividualViewChild"
-               ref="collapseExpandIconRef"
-               onClick={this.handleCollapseExpandClick}></div>
           <div className="labelContainer systemItemIndividualViewChild"
                onClick={this.handleCollapseExpandClick}>{sItemName}</div>
           <div className="rightIconContainer systemItemIndividualViewChild">
@@ -53,6 +51,10 @@ var systemItemIndividualRowView = React.createClass({
             <div className={sRestartClassName}></div>
             <div className={sShutDownClassName}></div>
             <div className="exitIcon rightIconContainerChild"></div>
+            <div className="rightIconContainerChild">{sCPU}</div>
+            <div className="rightIconContainerChild">{sMemory}</div>
+            <div className="rightIconContainerChild">{sDisk}</div>
+            <div className="rightIconContainerChild">{sPing}</div>
           </div>
 
         </div>
