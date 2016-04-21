@@ -514,3 +514,40 @@ body > .fr-toolbar {
     overflow: hidden;
     border: 1px solid #eee;
 }
+
+.applicationHealthViewContainer{
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin: 20px;
+}
+
+.appHealthEl{
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.pass{
+    border-color: rgba(10, 193, 10, 0.83);
+}
+
+.fail{
+    border-color: rgba(245, 35, 35, 0.83);
+}
+
+.inPrg{
+    border-color: rgba(236, 236, 27, 0.85);
+}
+
+.appHealthHeader {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 10px;
+    text-align: center;
+}
+
+.appHealthBody {
+    text-align: center;
+}
