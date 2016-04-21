@@ -1,0 +1,285 @@
+*{
+    font-family: 'Open Sans', Tahoma, sans-serif;;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.pieChartWrapper{
+
+}
+
+.customTile{
+
+}
+
+.customBig{
+
+}
+
+.applicationHealth{
+    content: 'Application Health';
+}
+
+.misc{
+    content: '';
+}
+
+.neo4j{
+    content: 'Neo4j';
+}
+
+.elastic{
+    content: 'Elastic';
+}
+
+.cassandra{
+    content: 'Cassandra';
+}
+
+.tomcat{
+    content: 'Tomcat';
+}
+
+.pentaho{
+    content: 'Pentaho';
+}
+
+.swift{
+    content: 'Swift';
+}
+
+.oracle{
+    content: 'Oracle';
+}
+
+.dashboardHeader{
+    height: 60px;
+    background-color: #3f3f3f;
+}
+
+.dashboardTitle {
+    font-size: 24px;
+    padding: 13px 5%;
+    color: #fafafa;
+}
+
+.dashboardBodyContainer{
+    padding: 0px 5%;
+    height: 100%;
+}
+
+.dashboardBody {
+    background-color: #eee;
+    height: calc(100% - 60px);
+}
+
+.wrapperMain {
+    height: 100%;
+    width: 100%;
+}
+
+.systemViewContainer {
+    width: calc(40% - 10px);
+    margin: 20px 20px 20px 0;
+}
+
+.transactionViewContainer, .systemViewContainer{
+    height: calc(100% - 40px);
+    float: left;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px -2px #aaa;
+}
+
+.systemLabel, .transactionLabel{
+    height: 40px;
+    line-height: 40px;
+    color: #777;
+    padding: 0 12px;
+    font-size: 18px;
+}
+
+.systemItemIndividualViewChild {
+    display: inline-block;
+}
+
+.rightIconContainer {
+    float: right;
+    width: 25%;
+
+}
+
+.rightIconContainerChild {
+    display: inline-block;
+}
+
+.collapseIcon {
+    height: 20px;
+    background: url("../images/Forward-50.png") no-repeat left 50% top 50%;
+    background-size: 15px;
+    width:5%;
+}
+
+.collapseIcon:hover {
+    background-color: #606060;
+    cursor: pointer;
+}
+
+.expandIcon {
+    height: 20px;
+    width: 20px;
+    background: url("../images/Expand Arrow-50.png") no-repeat left 50% top 50%;
+    background-size: 15px;
+}
+
+.expandIcon:hover {
+    background-color: #606060;
+    cursor: pointer;
+}
+
+.labelContainer{
+    cursor: context-menu;
+}
+
+.statusIcon {
+    height: 20px;
+    width: 20px;
+    background: url("../images/Rectangle-50.png") no-repeat left 50% top 50%;
+    background-size: 15px;
+}
+
+.statusIcon:hover {
+    background-color: #606060;
+    cursor: pointer;
+}
+
+.thumbUpIcon {
+    height: 20px;
+    width: 20px;
+    background: url("../images/Thumb Up-30.png") no-repeat left 50% top 50%;
+    background-size: 15px;
+}
+
+.thumbUpIcon:hover {
+    background-color: #606060;
+    cursor: pointer;
+}
+
+.playIcon {
+    height: 20px;
+    width: 20px;
+    background: url("../images/Play-30.png") no-repeat left 50% top 50%;
+    background-size: 15px;
+}
+
+.playIcon:hover {
+    background-color: #606060;
+    cursor: pointer;
+}
+
+.restartIcon {
+    height: 20px;
+    width: 20px;
+    background: url("../images/Restart-30.png") no-repeat left 50% top 50%;
+    background-size: 15px;
+}
+
+.restartIcon:hover {
+    background-color: #606060;
+    cursor: pointer;
+}
+
+.shutDownIcon {
+    height: 20px;
+    width: 20px;
+    background: url("../images/Shutdown-30 (1).png") no-repeat left 50% top 50%;
+    background-size: 15px;
+}
+
+.shutDownIcon:hover {
+    background-color: #606060;
+    cursor: pointer;
+}
+
+.exitIcon {
+    height: 20px;
+    width: 20px;
+    background: url("../images/Exit-30.png") no-repeat left 50% top 50%;
+    background-size: 15px;
+}
+
+.exitIcon:hover {
+    background-color: #606060;
+    cursor: pointer;
+}
+
+.childDomNodes {
+    margin-left: 20px;
+    position: relative;
+}
+
+.dispN {
+    display: none;
+}
+
+.transactionViewContainer {
+    width: calc(60% - 10px);
+    margin: 20px 0;
+}
+
+.transactionView {
+    padding: 10px;
+}
+
+.pieWrapper {
+    width: 13%;
+    display: inline-block;
+    padding: 3px;
+}
+
+.pieChartLabel {
+    font-size: small;
+    text-align: center;
+}
+
+.applicationhealth {
+    width: 30%;
+    display: inline-block;
+    margin-left: 10%;
+}
+
+.pieInfoBodyLabel{
+    font-size: 14px;
+}
+
+.pieInfoInnerWrapper {
+    display: inline-block;
+    float: right;
+    width: 15%;
+}
+
+.pieInfoChild {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.passColorBlock {
+    height: 20px;
+    width: 20px;
+}
+
+.failColorBlock {
+    height: 20px;
+    width: 20px;
+}
+
+.inProgressColorBlock {
+    height: 20px;
+    width: 20px;
+}
