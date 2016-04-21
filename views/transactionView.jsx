@@ -48,7 +48,7 @@ var TransactionView = React.createClass({
         }
       ];
 
-      var sItemName = oCurrentItem.Name;
+      var sItemName = oCurrentItem.label;
       var sPieContainerClassName = sItemName.replace(' ', '').toLowerCase() + "Pie pieWrapper";
       aPieDOM.push(
           <div className={sPieContainerClassName} onClick={that.handlePieWrapperClicked.bind(that, oCurrentItem)}>
@@ -69,7 +69,7 @@ var TransactionView = React.createClass({
     var aData = this.props.data;
     var sClickedPie = this.props.clickedPieChart;
 
-    var oCurrentPie = _.find(aData, {Name: sClickedPie});
+    var oCurrentPie = _.find(aData, {label: sClickedPie});
 
     var oTransaction = oCurrentPie.transaction;
     var iPass = oTransaction.pass;
@@ -113,16 +113,16 @@ var TransactionView = React.createClass({
 
     var aSlice = [
       {
-        color: oMockColor.pass,
-        value: iPass
+        color: oMockColor.inProgress,
+        value: iInProgress
       },
       {
         color: oMockColor.fail,
         value: iFail
       },
       {
-        color: oMockColor.inProgress,
-        value: iInProgress
+        color: oMockColor.pass,
+        value: iPass
       }
     ];
 
@@ -141,7 +141,8 @@ var TransactionView = React.createClass({
     var aTiles = MockDataForTiles;
     var aData = this.props.data;
     var _this = this;
-    var aTileViews = [];
+    var aBigTileViews = [];
+    var aSmallTileViews = [];
 
     _.forEach(aTiles, function(oTile){
       var oData = _.find(aData, {id: oTile.systemId});
@@ -149,10 +150,17 @@ var TransactionView = React.createClass({
       var sTileClassName = oTile.isBig ? "customTile customBig " : "customTile ";
       sTileClassName += oTile.className;
 
-      aTileViews.push(<div key={oTile.id} className={sTileClassName}>{oPieChartView}</div>);
+      if(oTile.isBig){
+        aBigTileViews.push(<div key={oTile.id} className={sTileClassName}>{oPieChartView}</div>);
+       } else {
+        aSmallTileViews.push(<div key={oTile.id} className={sTileClassName}>{oPieChartView}</div>);
+      }
     });
 
-    return aTileViews;
+    return <div>
+      <div className="bigTileContainer">{aBigTileViews}</div>
+      <div className="smallTileContainer">{aSmallTileViews}</div>
+    </div>;
   },
 
   render: function () {
