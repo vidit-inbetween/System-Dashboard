@@ -4,62 +4,71 @@ module.exports = [
     systemId: "1",
     label: "Application Health",
     className: "applicationHealth",
-    isBig: true
+    isBig: true,
+    isSelectedTile:true
   },
   {
     id: "10",
     systemId: null,
     label: "Miscellaneous",
     className: "misc",
-    isBig: true
+    isBig: true,
+    isSelectedTile:false
   },
   {
     id: "2",
     systemId: "2",
     label: "Neo4j Cluster",
     className: "neo4j",
-    isBig: false
+    isBig: false,
+    isSelectedTile:false
   },
   {
     id: "3",
     systemId: "3",
     label: "Elastic Cluster",
     className: "elastic",
-    isBig: false
+    isBig: false,
+    isSelectedTile:false
   },
   {
     id: "4",
     systemId: "4",
     label: "Cassandra",
     className: "cassandra",
-    isBig: false
+    isBig: false,
+    isSelectedTile:false
   },
   {
     id: "5",
     systemId: "5",
     label: "Tomcat",
     className: "tomcat",
-    isBig: false
+    isBig: false,
+    isSelectedTile:false
   },
   {
     id: "6",
     systemId: "6",
     label: "Pentaho",
     className: "pentaho",
-    isBig: false
+    isBig: false,
+    isSelectedTile:false
   },
   {
     id: "7",
     systemId: "7",
     label: "Swift",
     className: "swift",
-    isBig: false
+    isBig: false,
+    isSelectedTile:false
   },
   {
     id: "8",
     systemId: "8",
     label: "Oracle",
     className: "oracle",
-    isBig: false
+    isBig: false,
+    isSelectedTile:false
   }
 ];
