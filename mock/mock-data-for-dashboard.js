@@ -44,14 +44,14 @@ module.exports = [
     id: "7",
     label: 'Swift',
     isChildVisible: false,
-    childNodes: [{label: 'node1'}, {label: 'node2'}],
+    childNodes: [],
     transaction: {pass: 70, fail: 10, inProgress: 30}
   },
   {
     id: "8",
     label: 'Oracle',
     isChildVisible: false,
-    childNodes: [{label: 'node1'}, {label: 'node2'}],
+    childNodes: [],
     transaction: {pass: 80, fail: 90, inProgress: 30}
   }
 ]

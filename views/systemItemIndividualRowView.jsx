@@ -1,6 +1,7 @@
 var React = require('react');
 var EventBus = require('../libraries/eventdispatcher/EventDispatcher');
 var _ = require('lodash');
+var $ = require('jquery');
 
 
 var Events = {
@@ -15,24 +16,19 @@ var systemItemIndividualRowView = React.createClass({
   },
 
   handleCollapseExpandClick: function (oEvent) {
-    var oCollapseIconDom = this.refs.collapseExpandIconRef;
-    var aClassList = oCollapseIconDom.classList;
-    if (_.includes(aClassList, 'collapseIcon')) {
-      oCollapseIconDom.classList.remove('collapseIcon');
-      oCollapseIconDom.classList.add('expandIcon');
-    } else if (_.includes(aClassList, 'expandIcon')) {
-      oCollapseIconDom.classList.remove('expandIcon');
-      oCollapseIconDom.classList.add('collapseIcon');
+
+    var oIndividualWrapperViewDOM = this.refs.systemItemIndividualView;
+    if(oIndividualWrapperViewDOM.nextSibling && _.includes(oIndividualWrapperViewDOM.nextSibling.classList, 'childDomNodes')){
+      var oDomToToggle = oIndividualWrapperViewDOM.nextSibling;
+      $(oDomToToggle).toggle(500, 'linear');
     }
-    var oItem = this.props.item;
-    var sItemName = oItem.label;
-    EventBus.dispatch(Events.HANDLE_COLLAPSE_EXPAND_ICON_CLICKED, this, sItemName);
   },
 
   render: function () {
     var oItem = this.props.item;
     var sItemName = oItem.label;
-    var oStyle = (oItem.id!=1 && (!oItem.childNodes || oItem.childNodes.length < 1)) ? {"border-top":"none"}: null;
+    var iId = oItem.id;
+    var oStyle = ((iId!=1 && iId!=7 && iId!=8) && (!oItem.childNodes || oItem.childNodes.length < 1)) ? {"border-top":"none"}: null;
 
     var sPlayClassName = 'playIcon rightIconContainerChild';
     var sRestartClassName = 'restartIcon rightIconContainerChild';
@@ -44,19 +40,19 @@ var systemItemIndividualRowView = React.createClass({
     }
 
     return (
-        <div className='systemItemIndividualView' style={oStyle}>
+        <div className='systemItemIndividualView'  ref='systemItemIndividualView' style={oStyle}>
           <div className="collapseExpand collapseIcon systemItemIndividualViewChild"
                ref="collapseExpandIconRef"
                onClick={this.handleCollapseExpandClick}></div>
           <div className="labelContainer systemItemIndividualViewChild"
                onClick={this.handleCollapseExpandClick}>{sItemName}</div>
           <div className="rightIconContainer systemItemIndividualViewChild">
-            <div className="statusIcon rightIconContainerChild" title="Status"></div>
-            <div className="thumbUpIcon rightIconContainerChild" title=""></div>
-            <div className={sPlayClassName} title="Play"></div>
-            <div className={sRestartClassName} title="Restart"></div>
-            <div className={sShutDownClassName} title="Shut Down"></div>
-            <div className="exitIcon rightIconContainerChild" title="Exit"></div>
+            <div className="statusIcon rightIconContainerChild" ></div>
+            <div className="thumbUpIcon rightIconContainerChild" ></div>
+            <div className={sPlayClassName}></div>
+            <div className={sRestartClassName}></div>
+            <div className={sShutDownClassName}></div>
+            <div className="exitIcon rightIconContainerChild"></div>
           </div>
 
         </div>
